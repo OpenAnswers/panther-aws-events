@@ -1,0 +1,65 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  This is a proof of concept to get AWS Events events from AWS to Panther
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 3
+
+Parameters:
+  APIToken:
+    Description: The API token used to access the panther API at the FQDN you have already provided
+    Type: String
+    AllowedPattern: '[A-Za-z0-9]{32}'
+  ConsoleFQDN:
+    Description: The FQDN of the panther console that you wish to send events to
+    Type: String
+
+Outputs:
+  Events2PantherFunction:
+    Description: "AWS Events to Panther Lambda Function ARN"
+    Value: !GetAtt Events2PantherFunction.Arn
+  Events2PantherFunctionIamRole:
+    Description: "Implicit IAM Role created for the AWS Events to Panther function"
+    Value: !GetAtt Events2PantherFunctionRole.Arn
+
+Resources:
+  Events2PantherFunction:
+    Type: AWS::Serverless::Function             # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      FunctionName: !Sub "${AWS::StackName}"
+      CodeUri: e2p
+      Handler: e2p.lambdaHandler
+      Runtime: nodejs12.x
+      Environment:
+        Variables:
+          CONSOLE_FQDN: !Ref ConsoleFQDN
+          API_TOKEN: !Ref APIToken
+      Policies:
+      - AWSLambdaExecute
+      Events:
+        # Trigger the Lambda function on ALL events
+        AllEvents:
+          Type: CloudWatchEvent
+          Properties:
+            Pattern:
+              account:
+                - !Ref AWS::AccountId
+        # You can create your own event filters that trigger 
+        # this Lambda this way (if you uncomment the next few lines):
+        # GuardDuty:
+        #   Type: CloudWatchEvent
+        #   Properties:
+        #     Pattern:
+        #       Source:
+        #       - aws.guardduty
+
+  # Only keep the Lambda function logs for 14 days:
+  Events2PantherLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub "/aws/lambda/${AWS::StackName}"
+      RetentionInDays: 14
+

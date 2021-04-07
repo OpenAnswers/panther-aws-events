@@ -1,0 +1,19 @@
+{
+  "name": "events2panther",
+  "version": "0.1.0",
+  "description": "Received events from AWS Event Bridge and sends them to panther",
+  "main": "e2p.js",
+  "repository": "https://github.com/OpenAnswers/panther-aws-events",
+  "author": "Open Answers",
+  "license": "CPAL-1.0",
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "scripts": {
+    "test": "mocha tests/unit/"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}
