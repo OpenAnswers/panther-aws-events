@@ -1,0 +1,297 @@
+{
+    "version": "0",
+    "id": "cd2d702e-ab31-411b-9344-793ce56b1bc7",
+    "detail-type": "GuardDuty Finding",
+    "source": "aws.guardduty",
+    "account": "111122223333",
+    "time": "1970-01-01T00:00:00Z",
+    "region": "eu-west-1",
+    "resources": [],
+    "detail": {
+
+        "findings": [{
+                "schemaVersion": "2.0",
+                "accountId": "123456789012",
+                "region": "eu-west-1",
+                "partition": "aws",
+                "id": "74b7d2599b228a6564523732e2b8757c",
+                "arn": "arn:aws:guardduty:eu-west-1:123456789012:detector/eeb009602d84f681a46d57e6775a83a7/finding/74b7d2599b228a6564523732e2b8757c",
+                "type": "Backdoor:EC2/DenialOfService.Tcp",
+                "resource": {
+                    "resourceType": "Instance",
+                    "instanceDetails": {
+                        "instanceId": "i-99999999",
+                        "instanceType": "m3.xlarge",
+                        "launchTime": "2016-08-02T02:05:06Z",
+                        "platform": null,
+                        "productCodes": [{
+                            "productCodeId": "GeneratedFindingProductCodeId",
+                            "productCodeType": "GeneratedFindingProductCodeType"
+                        }],
+                        "iamInstanceProfile": {
+                            "arn": "GeneratedFindingInstanceProfileArn",
+                            "id": "GeneratedFindingInstanceProfileId"
+                        },
+                        "networkInterfaces": [{
+                            "ipv6Addresses": [],
+                            "networkInterfaceId": "eni-bfcffe88",
+                            "privateDnsName": "GeneratedFindingPrivateDnsName",
+                            "privateIpAddress": "10.0.0.1",
+                            "privateIpAddresses": [{
+                                "privateDnsName": "GeneratedFindingPrivateName",
+                                "privateIpAddress": "10.0.0.1"
+                            }],
+                            "subnetId": "GeneratedFindingSubnetId",
+                            "vpcId": "GeneratedFindingVPCId",
+                            "securityGroups": [{
+                                "groupName": "GeneratedFindingSecurityGroupName",
+                                "groupId": "GeneratedFindingSecurityId"
+                            }],
+                            "publicDnsName": "GeneratedFindingPublicDNSName",
+                            "publicIp": "198.51.100.0"
+                        }],
+                        "tags": [{
+                                "key": "GeneratedFindingInstaceTag1",
+                                "value": "GeneratedFindingInstaceValue1"
+                            },
+                            {
+                                "key": "GeneratedFindingInstaceTag2",
+                                "value": "GeneratedFindingInstaceTagValue2"
+                            },
+                            {
+                                "key": "GeneratedFindingInstaceTag3",
+                                "value": "GeneratedFindingInstaceTagValue3"
+                            },
+                            {
+                                "key": "GeneratedFindingInstaceTag4",
+                                "value": "GeneratedFindingInstaceTagValue4"
+                            },
+                            {
+                                "key": "GeneratedFindingInstaceTag5",
+                                "value": "GeneratedFindingInstaceTagValue5"
+                            },
+                            {
+                                "key": "GeneratedFindingInstaceTag6",
+                                "value": "GeneratedFindingInstaceTagValue6"
+                            },
+                            {
+                                "key": "GeneratedFindingInstaceTag7",
+                                "value": "GeneratedFindingInstaceTagValue7"
+                            },
+                            {
+                                "key": "GeneratedFindingInstaceTag8",
+                                "value": "GeneratedFindingInstaceTagValue8"
+                            },
+                            {
+                                "key": "GeneratedFindingInstaceTag9",
+                                "value": "GeneratedFindingInstaceTagValue9"
+                            }
+                        ],
+                        "instanceState": "running",
+                        "availabilityZone": "GeneratedFindingInstaceAvailabilityZone",
+                        "imageId": "ami-99999999",
+                        "imageDescription": "GeneratedFindingInstaceImageDescription"
+                    }
+                },
+                "service": {
+                    "serviceName": "guardduty",
+                    "detectorId": "eeb009602d84f681a46d57e6775a83a7",
+                    "action": {
+                        "actionType": "NETWORK_CONNECTION",
+                        "networkConnectionAction": {
+                            "connectionDirection": "OUTBOUND",
+                            "remoteIpDetails": {
+                                "ipAddressV4": "198.51.100.0",
+                                "organization": {
+                                    "asn": "-1",
+                                    "asnOrg": "GeneratedFindingASNOrg",
+                                    "isp": "GeneratedFindingISP",
+                                    "org": "GeneratedFindingORG"
+                                },
+                                "country": {
+                                    "countryName": "GeneratedFindingCountryName"
+                                },
+                                "city": {
+                                    "cityName": "GeneratedFindingCityName"
+                                },
+                                "geoLocation": {
+                                    "lat": 0,
+                                    "lon": 0
+                                }
+                            },
+                            "remotePortDetails": {
+                                "port": 80,
+                                "portName": "HTTP"
+                            },
+                            "localPortDetails": {
+                                "port": 24198,
+                                "portName": "Unknown"
+                            },
+                            "protocol": "TCP",
+                            "blocked": false
+                        }
+                    },
+                    "resourceRole": "ACTOR",
+                    "additionalInfo": {
+                        "sample": true
+                    },
+                    "eventFirstSeen": "2020-01-14T15:36:45.893Z",
+                    "eventLastSeen": "2020-01-14T15:36:45.893Z",
+                    "archived": false,
+                    "count": 1
+                },
+                "severity": 8,
+                "createdAt": "2020-01-14T15:36:45.893Z",
+                "updatedAt": "2020-01-14T15:36:45.893Z",
+                "title": "EC2 instance i-99999999 is behaving in a manner that may indicate it is being used to perform a Denial of Service (DoS) attack using TCP protocol.",
+                "description": "EC2 instance i-99999999 is behaving in a manner that may indicate it is being used to perform a Denial of Service (DoS) attack using TCP protocol."
+
+            },
+            {
+                "schemaVersion": "2.0",
+                "accountId": "123456789012",
+                "region": "eu-west-1",
+                "partition": "aws",
+                "id": "90b7d2599b20777ad9a48d776c85f275",
+                "arn": "arn:aws:guardduty:eu-west-1:123456789012:detector/eeb009602d84f681a46d57e6775a83a7/finding/90b7d2599b20777ad9a48d776c85f275",
+                "type": "UnauthorizedAccess:EC2/TorRelay",
+                "resource": {
+                    "resourceType": "Instance",
+                    "instanceDetails": {
+                        "instanceId": "i-99999999",
+                        "instanceType": "m3.xlarge",
+                        "launchTime": "2016-08-02T02:05:06Z",
+                        "platform": null,
+                        "productCodes": [{
+                            "productCodeId": "GeneratedFindingProductCodeId",
+                            "productCodeType": "GeneratedFindingProductCodeType"
+                        }],
+                        "iamInstanceProfile": {
+                            "arn": "GeneratedFindingInstanceProfileArn",
+                            "id": "GeneratedFindingInstanceProfileId"
+                        },
+                        "networkInterfaces": [{
+                            "ipv6Addresses": [],
+                            "networkInterfaceId": "eni-bfcffe88",
+                            "privateDnsName": "GeneratedFindingPrivateDnsName",
+                            "privateIpAddress": "10.0.0.1",
+                            "privateIpAddresses": [{
+                                "privateDnsName": "GeneratedFindingPrivateName",
+                                "privateIpAddress": "10.0.0.1"
+                            }],
+                            "subnetId": "GeneratedFindingSubnetId",
+                            "vpcId": "GeneratedFindingVPCId",
+                            "securityGroups": [{
+                                "groupName": "GeneratedFindingSecurityGroupName",
+                                "groupId": "GeneratedFindingSecurityId"
+                            }],
+                            "publicDnsName": "GeneratedFindingPublicDNSName",
+                            "publicIp": "198.51.100.0"
+                        }],
+                        "tags": [{
+                                "key": "GeneratedFindingInstaceTag1",
+                                "value": "GeneratedFindingInstaceValue1"
+                            },
+                            {
+                                "key": "GeneratedFindingInstaceTag2",
+                                "value": "GeneratedFindingInstaceTagValue2"
+                            },
+                            {
+                                "key": "GeneratedFindingInstaceTag3",
+                                "value": "GeneratedFindingInstaceTagValue3"
+                            },
+                            {
+                                "key": "GeneratedFindingInstaceTag4",
+                                "value": "GeneratedFindingInstaceTagValue4"
+                            },
+                            {
+                                "key": "GeneratedFindingInstaceTag5",
+                                "value": "GeneratedFindingInstaceTagValue5"
+                            },
+                            {
+                                "key": "GeneratedFindingInstaceTag6",
+                                "value": "GeneratedFindingInstaceTagValue6"
+                            },
+                            {
+                                "key": "GeneratedFindingInstaceTag7",
+                                "value": "GeneratedFindingInstaceTagValue7"
+                            },
+                            {
+                                "key": "GeneratedFindingInstaceTag8",
+                                "value": "GeneratedFindingInstaceTagValue8"
+                            },
+                            {
+                                "key": "GeneratedFindingInstaceTag9",
+                                "value": "GeneratedFindingInstaceTagValue9"
+                            }
+                        ],
+                        "instanceState": "running",
+                        "availabilityZone": "GeneratedFindingInstaceAvailabilityZone",
+                        "imageId": "ami-99999999",
+                        "imageDescription": "GeneratedFindingInstaceImageDescription"
+                    }
+                },
+                "service": {
+                    "serviceName": "guardduty",
+                    "detectorId": "eeb009602d84f681a46d57e6775a83a7",
+                    "action": {
+                        "actionType": "NETWORK_CONNECTION",
+                        "networkConnectionAction": {
+                            "connectionDirection": "OUTBOUND",
+                            "remoteIpDetails": {
+                                "ipAddressV4": "198.51.100.0",
+                                "organization": {
+                                    "asn": "-1",
+                                    "asnOrg": "GeneratedFindingASNOrg",
+                                    "isp": "GeneratedFindingISP",
+                                    "org": "GeneratedFindingORG"
+                                },
+                                "country": {
+                                    "countryName": "GeneratedFindingCountryName"
+                                },
+                                "city": {
+                                    "cityName": "GeneratedFindingCityName"
+                                },
+                                "geoLocation": {
+                                    "lat": 0,
+                                    "lon": 0
+                                }
+                            },
+                            "remotePortDetails": {
+                                "port": 80,
+                                "portName": "HTTP"
+                            },
+                            "localPortDetails": {
+                                "port": 39677,
+                                "portName": "Unknown"
+                            },
+                            "protocol": "TCP",
+                            "blocked": false
+                        }
+                    },
+                    "resourceRole": "TARGET",
+                    "additionalInfo": {
+                        "sample": true
+                    },
+                    "evidence": {
+                        "threatIntelligenceDetails": [{
+                            "threatListName": "GeneratedFindingThreatListName",
+                            "threatNames": [
+                                "GeneratedFindingThreatName"
+                            ]
+                        }]
+                    },
+                    "eventFirstSeen": "2020-01-14T15:36:45.888Z",
+                    "eventLastSeen": "2020-01-14T15:36:45.888Z",
+                    "archived": false,
+                    "count": 1
+                },
+                "severity": 8,
+                "createdAt": "2020-01-14T15:36:45.888Z",
+                "updatedAt": "2020-01-14T15:36:45.888Z",
+                "title": "EC2 instance i-99999999 is communicating with Tor Exit node.",
+                "description": "EC2 instance i-99999999 is communicating with IP address 198.51.100.0 on the Tor Anonymizing Proxy network."
+            }
+        ]
+    }
+}

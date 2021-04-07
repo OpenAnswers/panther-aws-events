@@ -40,7 +40,7 @@ To install SAM, rather than installing the linux version of homebrew (as AWS rec
 
 You will require the following details from your Panther console:
 
-* The fully qualified name of your console, in the format e.g.: `<your console name>`.[app.panther.support](//app.panther.support)
+* The API URL of your console, in the format e.g.: `<your console name>`.[app.panther.support](//app.panther.support)`/api/event/create`
 * The [API key](//openanswers.github.io/panther-docs/panther/admin#api-keys) from your [console](//openanswers.github.io/panther-docs/panther/console), this will be a long 32 character string of random letters and numbers.
 
 Once you have those details you can build the deployment package and then deploy it to AWS:
@@ -68,7 +68,7 @@ Configuring SAM deploy
         Stack Name [AWS-Events2Panther]: 
         AWS Region [us-east-1]: eu-west-3
         Parameter APIToken []: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        Parameter ConsoleFQDN []: test.app.panther.support
+        Parameter APIUrl []: https://example.app.panther.support/api/event/create
         #Shows you resources changes to be deployed and require a 'Y' to initiate deploy
         Confirm changes before deploy [Y/n]: y
         #SAM needs permission to be able to create roles to connect to the resources in your template
@@ -95,7 +95,7 @@ Configuring SAM deploy
         Confirm changeset          : True
         Deployment s3 bucket       : aws-sam-cli-managed-default-samclisourcebucket-1f8nf3gegbbkw
         Capabilities               : ["CAPABILITY_IAM"]
-        Parameter overrides        : {'APIToken': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', 'ConsoleFQDN': 'example.app.panther.support'}
+        Parameter overrides        : {'APIToken': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', 'APIUrl': 'https://example.app.panther.support/api/event/create'}
 
 Initiating deployment
 =====================
@@ -335,7 +335,7 @@ Note: The severity is on a scale from 1-5, with 5=critical, 4=major, 3=minor, 2=
 
 SAM can use a local docker image to test Lambda functions on your machine.
 
-To run the lambda function with the test data first update the `env.json` file with your Panther hostname and the API_TOKEN.
+To run the lambda function with the test data first update the `env.json` file with your Panther API_URL and the API_TOKEN.
 
 **Note** to create a PANTHER_API_TOKEN please consult the [Panther documentation](https://openanswers.github.io/panther-docs/panther/admin#api-keys) 
 
@@ -343,7 +343,7 @@ To run the lambda function with the test data first update the `env.json` file w
 ❯ cat env.json
 {
   "Parameters": {
-    "CONSOLE_FQDN": "<PANTHER_NAME>.app.panther.support",
+    "API_URL": "https://<PANTHER_NAME>.app.panther.support/api/event/create",
     "API_TOKEN": "<PANTHER_API_TOKEN>"
   }
 }
